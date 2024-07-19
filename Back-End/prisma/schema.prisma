@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Models
+model User {
+  id       String    @id @default(uuid())
+  name     String
+  email    String
+  password String
+  role     String
+  history  History[]
+}
+
+model Objetive {
+  id           String     @id @default(uuid())
+  title        String
+  meditationId String
+  meditation   Meditation @relation(fields: [meditationId], references: [id])
+}
+
+model Meditation {
+  id          String     @id @default(uuid())
+  title       String
+  description String
+  duration    Int
+  url_audio   String
+  createdAt   DateTime   @default(now())
+  objetive    Objetive[]
+  CategoryId  String
+  category    Category   @relation(fields: [CategoryId], references: [id])
+  historyId   String
+  history     History    @relation(fields: [historyId], references: [id])
+}
+
+model Category {
+  id         String       @id @default(uuid())
+  name       String
+  meditation Meditation[]
+}
+
+model History {
+  id         String       @id @default(uuid())
+  date_heard DateTime     @default(now())
+  userId     String
+  user       User         @relation(fields: [userId], references: [id])
+  meditation Meditation[]
+}
