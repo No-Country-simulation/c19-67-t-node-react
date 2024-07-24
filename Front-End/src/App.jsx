@@ -1,16 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import MobileNavbar from './assets/components/navbar/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <h1 className=' text-yellow-700'>hola</h1>
-    </>
-  )
+    <BrowserRouter>
+    <MobileNavbar/> 
+      <Routes>
+        <Route path="/" element={<div>Home Page</div>} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
