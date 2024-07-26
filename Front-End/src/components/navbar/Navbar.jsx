@@ -1,0 +1,84 @@
+import React, { useState } from 'react';
+import { House, Search, Music, UserCircle, Minus } from 'lucide-react';
+
+const MobileNavbar = () => {
+  const [activeTab, setActiveTab] = useState('home');
+  const [iconPosition, setIconPosition] = useState(0); // Estado para la posición del icono
+
+  const handleTabClick = (tab, index) => {
+    setActiveTab(tab);
+    setIconPosition(index); // Actualiza la posición del icono
+  };
+
+  return (
+    <nav className="fixed bottom-0 left-0 w-full bg-white shadow-md md:hidden">
+      {/* Línea negra de 0.5px de alto que está arriba de la navbar */}
+      <div className="absolute h-[0.5px] bg-black left-0 right-0 top-0"></div>
+
+      {/* Icono "menos" que se desplaza sobre la línea */}
+      <div
+        className={`absolute transition-transform duration-300`} 
+        style={{ left: `${iconPosition * 25}%`, top: '-10px', transform: 'translateX(-50%)' }} // Ajusta el desplazamiento según la posición
+      >
+        <Minus size={24} className="text-green-700" style={{ strokeWidth: 2 }} /> {/* Icono "menos" en verde intenso */}
+      </div>
+
+      <div className="relative flex justify-around p-2 pt-6"> {/* Añadir padding-top para espacio debajo de la línea */}
+        <button
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'home'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
+          }`}
+          onClick={() => handleTabClick('home', 0)}
+        >
+          <House size={24} />
+          <span className="text-xs">Home</span>
+        </button>
+
+        <button
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'search'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
+          }`}
+          onClick={() => handleTabClick('search', 1)}
+        >
+          <Search size={24} />
+          <span className="text-xs">Search</span>
+        </button>
+
+        <button
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'music'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
+          }`}
+          onClick={() => handleTabClick('music', 2)}
+        >
+          <Music size={24} />
+          <span className="text-xs">Music</span>
+        </button>
+
+        <button
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'users'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
+          }`}
+          onClick={() => handleTabClick('users', 3)}
+        >
+          <UserCircle size={24} />
+          <span className="text-xs">Users</span>
+        </button>
+      </div>
+    </nav>
+  );
+};
+
+export default MobileNavbar;
+
+
+
+
+
