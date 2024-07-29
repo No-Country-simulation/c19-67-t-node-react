@@ -9,12 +9,12 @@ datasource db {
 
 // Models
 model User {
-  id       String    @id @default(uuid())
+  id       String @id @default(uuid())
   name     String
   email    String
   password String
-  role     String
-  history  History[]
+  role     String @default("user")
+  // history  History[]
 }
 
 model Objetive {
@@ -29,13 +29,13 @@ model Meditation {
   title       String
   description String
   duration    Int
-  url_audio   String
+  audioUrl    String
   createdAt   DateTime   @default(now())
   objetive    Objetive[]
   CategoryId  String
   category    Category   @relation(fields: [CategoryId], references: [id])
-  historyId   String
-  history     History    @relation(fields: [historyId], references: [id])
+  // historyId   String
+  // history     History    @relation(fields: [historyId], references: [id])
 }
 
 model Category {
@@ -44,10 +44,10 @@ model Category {
   meditation Meditation[]
 }
 
-model History {
-  id         String       @id @default(uuid())
-  date_heard DateTime     @default(now())
-  userId     String
-  user       User         @relation(fields: [userId], references: [id])
-  meditation Meditation[]
-}
+// model History {
+//   id         String       @id @default(uuid())
+//   date_heard DateTime     @default(now())
+//   userId     String
+//   user       User         @relation(fields: [userId], references: [id])
+//   meditation Meditation[]
+// }

@@ -1,12 +1,14 @@
-import express from 'express'
-import morgan from 'morgan'
-import routerUser from './user.route.js'
+import { Router } from 'express'
+import userRouter from './user.route.js'
+import meditationRoute from './meditation.route.js'
+import categorieRoute from './categories.route.js'
 
-const server = express()
+const routerAPI = (app) => {
+  const router = Router()
+  app.use('/api', router)
+  router.use('/user', userRouter)
+  router.use('/meditation', meditationRoute)
+  router.use('/categories', categorieRoute)
+}
 
-server.use(morgan('dev'))
-server.use(express.json())
-
-server.use('/api/user', routerUser)
-
-export default server
+export default routerAPI
