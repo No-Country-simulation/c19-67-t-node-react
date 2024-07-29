@@ -3,7 +3,7 @@ import { House, Search, Music, UserCircle, Minus } from 'lucide-react';
 
 const MobileNavbar = () => {
   const [activeTab, setActiveTab] = useState('home');
-  const [iconPosition, setIconPosition] = useState(0); // Estado para la posición del icono
+  const [iconPosition, setIconPosition] = useState(0);
 
   const handleTabClick = (tab, index) => {
     setActiveTab(tab);
@@ -12,18 +12,15 @@ const MobileNavbar = () => {
 
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-white shadow-md md:hidden">
-      {/* Línea negra de 0.5px de alto que está arriba de la navbar */}
       <div className="absolute h-[0.5px] bg-black left-0 right-0 top-0"></div>
-
-      {/* Icono "menos" que se desplaza sobre la línea */}
       <div
         className={`absolute transition-transform duration-300`} 
-        style={{ left: `${iconPosition * 25}%`, top: '-10px', transform: 'translateX(-50%)' }} // Ajusta el desplazamiento según la posición
+        style={{ left: `${iconPosition * 25}%`, top: '-10px', transform: 'translateX(-50%)' }} 
       >
-        <Minus size={24} className="text-green-700" style={{ strokeWidth: 2 }} /> {/* Icono "menos" en verde intenso */}
+        <Minus size={24} className="text-green-700" style={{ strokeWidth: 2 }} /> 
       </div>
 
-      <div className="relative flex justify-around p-2 pt-6"> {/* Añadir padding-top para espacio debajo de la línea */}
+      <div className="relative flex justify-around p-2 pt-6">
         <button
           className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
             activeTab === 'home'
