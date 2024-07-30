@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import googleImage from '../../assets/img/login/icongoogle.png';
 import facebookImage from '../../assets/img/login/iconfacebook.png';
+import logoImage from '../../assets/img/login/logo.png';
 
 const Login = ({ onLogin }) => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/ocultar la contraseña
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -16,14 +17,14 @@ const Login = ({ onLogin }) => {
   };
 
   const handleRegisterRedirect = () => {
-    navigate('/register'); // Redirigir a la página de registro
+    navigate('/register');
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white"> 
       <div className="bg-card rounded-lg p-8 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-primary text-center mb-6">LOGO</h1>
-        <p className="text-primary text-center mb-4">Iniciar sesión con correo electrónico</p>
+        <img src={logoImage} alt="Logo" className="mb-6 mx-auto" />
+        <h2 className="text-lg font-semibold text-foreground">Iniciar sesión con correo electrónico</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-primary"></label>
@@ -71,7 +72,7 @@ const Login = ({ onLogin }) => {
         </form>
         <div className="flex items-center justify-start mt-6">
           <p className="text-primary mr-2">¿No estás registrado?</p>
-          <button onClick={handleRegisterRedirect} className="text-green-500 hover:underline">Crea una cuenta</button>
+          <button onClick={handleRegisterRedirect} className="text-[#3A8F73] hover:underline">Crea una cuenta</button>
         </div>
         <p className="text-primary text-center">O inicia sesión con</p>
         <div className="flex justify-center mt-4 space-x-4"> 
@@ -94,6 +95,3 @@ const Login = ({ onLogin }) => {
 };
 
 export default Login;
-
-
-

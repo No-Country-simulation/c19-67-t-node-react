@@ -7,7 +7,7 @@ const MobileNavbar = () => {
 
   const handleTabClick = (tab, index) => {
     setActiveTab(tab);
-    setIconPosition(index); // Actualiza la posición del icono
+    setIconPosition(index);
   };
 
   return (
@@ -15,7 +15,7 @@ const MobileNavbar = () => {
       <div className="absolute h-[0.5px] bg-black left-0 right-0 top-0"></div>
       <div
         className={`absolute transition-transform duration-300`} 
-        style={{ left: `${iconPosition * 25}%`, top: '-10px', transform: 'translateX(-50%)' }} 
+        style={{ left: `calc(60px + ${iconPosition * 25}%)`, top: '-10px', transform: 'translateX(-50%)' }} 
       >
         <Minus size={24} className="text-green-700" style={{ strokeWidth: 2 }} /> 
       </div>
@@ -74,8 +74,3 @@ const MobileNavbar = () => {
 };
 
 export default MobileNavbar;
-
-
-
-
-

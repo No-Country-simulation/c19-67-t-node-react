@@ -1,11 +1,11 @@
-// src/App.js
 import './App.css';
 import MobileNavbar from './components/navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Onboarding from './components/onboarding/Onboarding';
 import Login from './components/login/Login';
-import Register from './components/registro/Register'; // Importar el componente Register
+import Register from './components/register/Register';
 import { useState } from 'react';
+import Home from './view/Home/Home';
 
 function App() {
   const [isOnboardingComplete, setIsOnboardingComplete] = useState(false);
@@ -30,7 +30,7 @@ function App() {
             ) : isLoggedIn ? (
               <>
                 <MobileNavbar />
-                <div>Home Page</div> {/* Aquí puedes agregar el contenido de la página principal */}
+                <Route path='/home' element={<Home/>}/>
               </>
             ) : (
               <Login onLogin={handleLogin} />
@@ -38,8 +38,8 @@ function App() {
           }
         />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
-        <Route path="/register" element={<Register />} /> {/* Ruta para el componente Register */}
-        {/* Puedes agregar más rutas aquí */}
+        <Route path="/register" element={<Register />} />
+        
       </Routes>
     </BrowserRouter>
   );

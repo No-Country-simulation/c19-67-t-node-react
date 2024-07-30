@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Minus } from 'lucide-react';
 import onboardingImage1 from '../../assets/img/Onboarding/onboarding01.png';
 import onboardingImage2 from '../../assets/img/Onboarding/onboarding02.png';
 import onboardingImage3 from '../../assets/img/Onboarding/onboarding03.png';
@@ -55,6 +55,11 @@ const Onboarding = ({ onComplete }) => {
       </div>
       <h2 className="mt-4 text-lg font-semibold text-center">{onboardingData[currentStep].title}</h2>
       <p className="mt-2 text-center" style={{ marginTop: '10px' }}>{onboardingData[currentStep].text}</p>
+      <div className="flex justify-center mt-4 space-x-2">
+        <Minus size={16} className="text-[#48B390]" />
+        <Minus size={16} className="text-[#48B390]" />
+        <Minus size={16} className="text-[#48B390]" />
+      </div>
       <div className="absolute bottom-4 left-4">
         {currentStep > 0 && (
           <button
