@@ -1,54 +1,72 @@
 import React, { useState } from 'react';
-import { House, Music, Users, Search } from 'lucide-react';
+import { House, Search, Music, UserCircle, Minus } from 'lucide-react';
 
 const MobileNavbar = () => {
   const [activeTab, setActiveTab] = useState('home');
+  const [iconPosition, setIconPosition] = useState(0);
 
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab, index) => {
     setActiveTab(tab);
+    setIconPosition(index);
   };
 
   return (
-    <nav className="fixed bottom-0 left-0 w-full bg-white shadow-lg md:hidden">
-      <div className="flex justify-around p-2">
+    <nav className="fixed bottom-0 left-0 w-full bg-white shadow-md md:hidden">
+      <div className="absolute h-[0.5px] bg-black left-0 right-0 top-0"></div>
+      <div
+        className={`absolute transition-transform duration-300`} 
+        style={{ left: `calc(60px + ${iconPosition * 25}%)`, top: '-10px', transform: 'translateX(-50%)' }} 
+      >
+        <Minus size={24} className="text-green-700" style={{ strokeWidth: 2 }} /> 
+      </div>
+
+      <div className="relative flex justify-around p-2 pt-6">
         <button
-          className={`flex flex-col items-center justify-center ${
-            activeTab === 'home' ? 'text-blue-500' : 'text-gray-500'
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'home'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
           }`}
-          onClick={() => handleTabClick('home')}
+          onClick={() => handleTabClick('home', 0)}
         >
           <House size={24} />
           <span className="text-xs">Home</span>
         </button>
 
         <button
-          className={`flex flex-col items-center justify-center ${
-            activeTab === 'music' ? 'text-blue-500' : 'text-gray-500'
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'search'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
           }`}
-          onClick={() => handleTabClick('music')}
+          onClick={() => handleTabClick('search', 1)}
+        >
+          <Search size={24} />
+          <span className="text-xs">Search</span>
+        </button>
+
+        <button
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'music'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
+          }`}
+          onClick={() => handleTabClick('music', 2)}
         >
           <Music size={24} />
           <span className="text-xs">Music</span>
         </button>
 
         <button
-          className={`flex flex-col items-center justify-center ${
-            activeTab === 'users' ? 'text-blue-500' : 'text-gray-500'
+          className={`flex flex-col items-center justify-center p-2 rounded-[10px] ${
+            activeTab === 'users'
+              ? 'bg-green-200 text-green-800'
+              : 'text-black hover:bg-green-200 hover:text-green-800'
           }`}
-          onClick={() => handleTabClick('users')}
+          onClick={() => handleTabClick('users', 3)}
         >
-          <Users size={24} />
+          <UserCircle size={24} />
           <span className="text-xs">Users</span>
-        </button>
-
-        <button
-          className={`flex flex-col items-center justify-center ${
-            activeTab === 'search' ? 'text-blue-500' : 'text-gray-500'
-          }`}
-          onClick={() => handleTabClick('search')}
-        >
-          <Search size={24} />
-          <span className="text-xs">Search</span>
         </button>
       </div>
     </nav>
