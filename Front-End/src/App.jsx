@@ -22,9 +22,7 @@ function App() {
         <>
           <MobileNavbar />
           <Routes>
-            <Route path="/" element={<div>Home Page</div>} />
-            {/* Puedes agregar más rutas aquí */}
-            <Route path='/home' element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
       </Routes>
         </>
       )}
