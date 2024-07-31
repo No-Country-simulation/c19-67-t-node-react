@@ -6,7 +6,7 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { useState } from 'react';
 import Home from './view/Home/Home';
-import Questionnaire from './components/Questionnaire/QuestionNaire'; // Import the new Questionnaire component
+import Questionnaire from './components/Questionnaire/QuestionNaire';
 
 function App() {
   const [isOnboardingComplete, setIsOnboardingComplete] = useState(false);
@@ -29,7 +29,7 @@ function App() {
             !isOnboardingComplete ? (
               <Onboarding onComplete={handleOnboardingComplete} />
             ) : isLoggedIn ? (
-              <Questionnaire /> // Render the Questionnaire component
+              <Questionnaire />
             ) : (
               <Login onLogin={handleLogin} />
             )
