@@ -7,7 +7,7 @@ const MobileNavbar = () => {
 
   const handleTabClick = (tab, index) => {
     setActiveTab(tab);
-    setIconPosition(index);
+    setIconPosition(index); // Actualiza la posición del icono
   };
 
   return (
