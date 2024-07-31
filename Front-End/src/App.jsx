@@ -6,6 +6,7 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import { useState } from 'react';
 import Home from './view/Home/Home';
+import Questionnaire from './components/Questionnaire/QuestionNaire'; // Import the new Questionnaire component
 
 function App() {
   const [isOnboardingComplete, setIsOnboardingComplete] = useState(false);
@@ -28,10 +29,7 @@ function App() {
             !isOnboardingComplete ? (
               <Onboarding onComplete={handleOnboardingComplete} />
             ) : isLoggedIn ? (
-              <>
-                <MobileNavbar />
-                <Route path='/home' element={<Home/>}/>
-              </>
+              <Questionnaire /> // Render the Questionnaire component
             ) : (
               <Login onLogin={handleLogin} />
             )
@@ -39,7 +37,12 @@ function App() {
         />
         <Route path="/login" element={<Login onLogin={handleLogin} />} />
         <Route path="/register" element={<Register />} />
-        
+        <Route path="/home" element={
+          <>
+            <MobileNavbar />
+            <Home />
+          </>
+        } />
       </Routes>
     </BrowserRouter>
   );
