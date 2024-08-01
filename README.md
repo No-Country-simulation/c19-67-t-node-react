@@ -3,7 +3,7 @@
 <div style="display: flex; align-items: center; justify-content: center; gap: 2rem;">
   <img src="/Front-End/src/assets/Quiet Mind/Captura de pantalla (58).png" alt="Quiet Mind" width="250" height="574">
   <img src="/Front-End/src/assets/Quiet Mind/Captura de pantalla (62)uu.png" alt="Quiet Mind" width="250">
-  <img src="/Front-End/src/assets/Quiet Mind/Captura de pantalla (62)zz.png" alt="Quiet Mind" width="250">
+  <img src="/Front-End/src/assets/Quiet Mind/Captura de pantalla (62)zz.png" alt="Quiet Mind" width="250" height="574">
 </div>
 
 Quiet Mind es una aplicación web móvil diseñada para ayudar a usuarios que enfrentan problemas de ansiedad, depresión y otros trastornos emocionales. Proporciona recomendaciones personalizadas y un carrusel de contenido interactivo para guiar a los usuarios en su camino hacia el bienestar.
