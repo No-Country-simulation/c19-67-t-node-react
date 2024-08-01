@@ -38,10 +38,7 @@ function App() {
             !isOnboardingComplete ? (
               <Onboarding onComplete={handleOnboardingComplete} />
             ) : isLoggedIn ? (
-              <>
-                <MobileNavbar />
-                <Home />
-              </>
+              <Questionnaire />
             ) : (
               <Login onLogin={handleLogin} />
             )
