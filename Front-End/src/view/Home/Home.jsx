@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./Home.css";
 import { Bell, Zap, ChevronDown } from "lucide-react";
 import Recommendations from "../../components/Recommendations/Recommendations";
+import MobileNavbar from "../../components/navbar/Navbar";
 import Meditations from "../../components/Meditations/Meditations";
 import Exercises from "../../components/Exercises/Exercises";
 import MoodModal from "../../components/MoodModal/MoodModal";
@@ -11,6 +12,9 @@ import reco3 from "../../assets/img/Recomendaciones/3.jpg"
 import Rectangle from "../../assets/img/Ejercicios/Rectangle.png"
 import Vector from "../../assets/img/Ejercicios/Vector.png"
 import Vector2 from "../../assets/img/Ejercicios/Vector2.png"
+import medit1 from "../../assets/img/Meditations/medit1.jpg"
+import medit2 from "../../assets/img/Meditations/medit2.jpg"
+import medit3 from "../../assets/img/Meditations/medit3.jpg"
 
 const Home = () => {
 
@@ -39,20 +43,19 @@ const Home = () => {
   ];
 
   const meditation = [
-    { title: "meditacion 1", duration: "5 min", imgSrc: ""},
-    { title: "meditacion 2", duration: "8 min", imgSrc: ""},
-    { title: "meditacion 3", duration: "5 min", imgSrc: ""},
-    { title: "meditacion 4", duration: "5 min", imgSrc: ""},
-    { title: "meditacion 5", duration: "5 min", imgSrc: ""},
+    { title: "meditacion 1", duration: "5 min", imgSrc: medit1},
+    { title: "meditacion 2", duration: "8 min", imgSrc: medit2},
+    { title: "meditacion 3", duration: "5 min", imgSrc: medit3},
+    { title: "meditacion 4", duration: "5 min", imgSrc: medit1},
   ];
 
   return (
-    <main>
+    <main className="pb-24">
       <section className="">
         <div className="flex flex-wrap flex-row justify-between items-center m-3">
-          <p className=" font-manrope text-xl text-[#373737]">
+          <h1 className=" font-manrope text-xl text-[#373737]">
             Hola, <span className="font-manrope text-[#373737] ">Nombre</span>
-          </p>
+          </h1>
           <div className="flex gap-4">
             <span className="bg-[#E8F1F8] px-1 py-1 rounded-xl">
               <Zap color="#3C85B7" />
@@ -76,6 +79,7 @@ const Home = () => {
       <Exercises title="Ejercicios de respiración" items={exercise}/>
       <Meditations title="Meditaciones guiadas" items={meditation}/>
       {isModalOpen && <MoodModal closeModal={closeModal} />}
+      <MobileNavbar/>
     </main>
   );
 };

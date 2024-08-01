@@ -40,11 +40,11 @@ const Meditations = ({ title, items }) => {
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex-none w-full mr-4"
+              className="flex-none w-full mr-6"
               style={{ flex: "0 0 45%" }}
             >
               <img
-                className="mt-2 w-full h-32 rounded-lg"
+                className="mt-2 w-full h-32 object-cover rounded-lg"
                 src={item.imgSrc}
                 alt={`Imagen ${index + 1}`}
               />
