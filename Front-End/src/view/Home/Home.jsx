@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { Bell, Zap, ChevronDown } from "lucide-react";
 import Recommendations from "../../components/Recommendations/Recommendations";
@@ -6,18 +6,17 @@ import MobileNavbar from "../../components/navbar/Navbar";
 import Meditations from "../../components/Meditations/Meditations";
 import Exercises from "../../components/Exercises/Exercises";
 import MoodModal from "../../components/MoodModal/MoodModal";
-import reco1 from "../../assets/img/Recomendaciones/1.png"
-import reco2 from "../../assets/img/Recomendaciones/2.jpeg"
-import reco3 from "../../assets/img/Recomendaciones/3.jpg"
-import Rectangle from "../../assets/img/Ejercicios/Rectangle.png"
-import Vector from "../../assets/img/Ejercicios/Vector.png"
-import Vector2 from "../../assets/img/Ejercicios/Vector2.png"
-import medit1 from "../../assets/img/Meditations/medit1.jpg"
-import medit2 from "../../assets/img/Meditations/medit2.jpg"
-import medit3 from "../../assets/img/Meditations/medit3.jpg"
+import reco1 from "../../assets/img/Recomendaciones/1.png";
+import reco2 from "../../assets/img/Recomendaciones/2.jpeg";
+import reco3 from "../../assets/img/Recomendaciones/3.jpg";
+import Rectangle from "../../assets/img/Ejercicios/Rectangle.png";
+import Vector from "../../assets/img/Ejercicios/Vector.png";
+import Vector2 from "../../assets/img/Ejercicios/Vector2.png";
+import medit1 from "../../assets/img/Meditations/medit1.jpg";
+import medit2 from "../../assets/img/Meditations/medit2.jpg";
+import medit3 from "../../assets/img/Meditations/medit3.jpg";
 
 const Home = () => {
-
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputClick = () => {
@@ -38,15 +37,15 @@ const Home = () => {
   const exercise = [
     { title: "Ejercicio 1", duration: "5 min", imgSrc: Rectangle },
     { title: "Ejercicio 2", duration: "8 min", imgSrc: Vector },
-    { title: "Ejercicio 3", duration: "5 min", imgSrc: Vector2},
+    { title: "Ejercicio 3", duration: "5 min", imgSrc: Vector2 },
     { title: "Ejercicio 4", duration: "5 min", imgSrc: Vector2 },
   ];
 
   const meditation = [
-    { title: "meditacion 1", duration: "5 min", imgSrc: medit1},
-    { title: "meditacion 2", duration: "8 min", imgSrc: medit2},
-    { title: "meditacion 3", duration: "5 min", imgSrc: medit3},
-    { title: "meditacion 4", duration: "5 min", imgSrc: medit1},
+    { title: "meditacion 1", duration: "5 min", imgSrc: medit1 },
+    { title: "meditacion 2", duration: "8 min", imgSrc: medit2 },
+    { title: "meditacion 3", duration: "5 min", imgSrc: medit3 },
+    { title: "meditacion 4", duration: "5 min", imgSrc: medit1 },
   ];
 
   return (
@@ -54,7 +53,10 @@ const Home = () => {
       <section className="">
         <div className="flex flex-wrap flex-row justify-between items-center m-3">
           <h1 className=" font-manrope text-xl text-[#373737]">
-            Hola, <span className="font-manrope text-[#373737] ">Nombre</span>
+            Hola,{" "}
+            <span className="font-manrope text-[#373737] font-semibold">
+              Juan
+            </span>
           </h1>
           <div className="flex gap-4">
             <span className="bg-[#E8F1F8] px-1 py-1 rounded-xl">
@@ -65,21 +67,25 @@ const Home = () => {
             </span>
           </div>
           <div className="relative mt-2 w-full max-w-60">
-          <input
-              type="text"
-              placeholder="¿Cómo te sientes hoy?😀"
-              className="border border-gray-400 focus:border-transparent px-3 py-3 rounded-xl w-full pr-10"
+            <button
+              type="button"
+              className="border border-gray-400 focus:border-transparent px-3 py-4 rounded-xl w-full pr-10 text-left text-sm font-manrope "
               onClick={handleInputClick}
-            />
-            <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
+            >
+              ¿Cómo te sientes hoy?😀
+              <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none" />
+            </button>
           </div>
         </div>
       </section>
-      <Recommendations title="Recomendaciones para ti" items={recommendations}/>
-      <Exercises title="Ejercicios de respiración" items={exercise}/>
-      <Meditations title="Meditaciones guiadas" items={meditation}/>
+      <Recommendations
+        title="Recomendaciones para ti"
+        items={recommendations}
+      />
+      <Exercises title="Ejercicios de respiración" items={exercise} />
+      <Meditations title="Meditaciones guiadas" items={meditation} />
       {isModalOpen && <MoodModal closeModal={closeModal} />}
-      <MobileNavbar/>
+      <MobileNavbar />
     </main>
   );
 };

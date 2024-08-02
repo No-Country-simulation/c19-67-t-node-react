@@ -41,38 +41,38 @@ Quiet Mind es una aplicación web móvil diseñada para ayudar a usuarios que en
 <table align="center">
   <tr>
     <td align="center">
-      <strong>Juan Pérez</strong>
+      <strong>Hever Ahumada</strong>
       <br>
       <em>Desarrollador Frontend</em>
       <br>
-      <a href="https://www.linkedin.com/in/juanperez">
+      <a href="https://www.linkedin.com/in/hever-mateo-ahumada-416292269/">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20">
       </a>
     </td>
     <td align="center">
-      <strong>María Gómez</strong>
+      <strong>Emanuel Blanco</strong>
       <br>
-      <em>Desarrolladora Backend</em>
+      <em>Desarrollador Frontend</em>
       <br>
-      <a href="https://www.linkedin.com/in/mariagomez">
+      <a href="https://www.linkedin.com/in/blancoemanuel07">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20">
       </a>
     </td>
     <td align="center">
-      <strong>Carlos Sánchez</strong>
+      <strong>Mailèn Carta</strong>
       <br>
       <em>Diseñador UX/UI</em>
       <br>
-      <a href="https://www.linkedin.com/in/carlossanchez">
+      <a href="https://www.linkedin.com/in/mailen-carta/">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20">
       </a>
     </td>
     <td align="center">
-      <strong>Ana Martínez</strong>
+      <strong>Rosvir Pérez</strong>
       <br>
-      <em>Ingeniera de DevOps</em>
+      <em>Diseñador UX/UI</em>
       <br>
-      <a href="https://www.linkedin.com/in/anamartinez">
+      <a href="https://www.linkedin.com/in/rosvir-p%C3%A9rez-539148203/">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20">
       </a>
     </td>

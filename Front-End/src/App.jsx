@@ -1,11 +1,13 @@
 import "./App.css";
-import MobileNavbar from "./components/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Onboarding from "./components/onboarding/Onboarding";
 import Login from "./components/Login/Login";
 import Register from "./components/register/Register";
+import User from "./view/User/User";
+import Questionnaire from "./components/Questionnaire/QuestionNaire";
 import { useState } from "react";
 import Home from "./view/Home/Home";
+import Music from "./view/Music/Music";
 import Explorer from "./view/Explorer/Explorer";
 import explorer from "./assets/img/Explorer/Explorer.jpg"
 import explorer1 from "./assets/img/Explorer/explorer1.jpg"
@@ -44,10 +46,13 @@ function App() {
             )
           }
         />
-        <Route path="/login" element={<Login onLogin={handleLogin} />} />
+        <Route path="/login" element={<Login onLogin={handleLogin} />}/>
+        <Route path="/questions" element={<Questionnaire/>}/>
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />}/>
-        <Route path="explorer" element={<Explorer title="Categorias" items={category}/>}/>
+        <Route path="/explorer" element={<Explorer title="Categorias" items={category}/>}/>
+        <Route path="/music" element={<Music/>}/>
+        <Route path="/user" element={<User/>}/>
       </Routes>
     </BrowserRouter>
   );

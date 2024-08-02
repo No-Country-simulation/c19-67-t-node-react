@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { ChevronLeft } from "lucide-react";
 import { Search } from "lucide-react";
-import explorer2 from "../../assets/img/Explorer/explorer2.jpg"
-import explorer3 from "../../assets/img/Explorer/Explorer3.jpg"
+import explorer2 from "../../assets/img/Explorer/explorer2.jpg";
+import explorer3 from "../../assets/img/Explorer/Explorer3.jpg";
 import MobileNavbar from "../../components/navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const Explorer = ({ title, items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,7 +30,9 @@ const Explorer = ({ title, items }) => {
   return (
     <div className="pb-24">
       <div className="flex items-center mt-4">
-        <ChevronLeft color="#373737" size={32} />
+        <Link to="/home">
+          <ChevronLeft color="#373737" size={32} />
+        </Link>
         <h1 className="font-manrope text-2xl font-medium text-[#373737]">
           Explorar
         </h1>
@@ -78,22 +81,26 @@ const Explorer = ({ title, items }) => {
         <h1 className="ml-3 text-xl font-manrope text-[#373737] font-semibold">
           Recomendaciones
         </h1>
-        
+
         <div className="flex flex-col mt-4">
           <div className="ml-3">
             <img src={explorer2} className="w-[370px] rounded-lg" alt="" />
-            <p className="font-manrope text-[#373737] font-semibold mt-1 text-lg">Estres laboral</p>
+            <p className="font-manrope text-[#373737] font-semibold mt-1 text-lg">
+              Estres laboral
+            </p>
             <p className="font-manrope text-sm">5 min de lectura</p>
           </div>
 
           <div className="ml-3 mt-5">
             <img src={explorer3} className="w-[370px] rounded-lg" alt="" />
-            <p className="font-manrope text-[#373737] font-semibold mt-1 text-lg ">Ansiedad social</p>
+            <p className="font-manrope text-[#373737] font-semibold mt-1 text-lg ">
+              Ansiedad social
+            </p>
             <p className="font-manrope text-sm">5 min de lectura</p>
           </div>
         </div>
       </section>
-      <MobileNavbar/>
+      <MobileNavbar />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { Eye, EyeOff } from 'lucide-react';
 import googleImage from '../../assets/img/login/icongoogle.png'; 
 import facebookImage from '../../assets/img/login/iconfacebook.png'; 
 import logoImage from '../../assets/img/login/logo.png';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -19,7 +20,7 @@ const Register = () => {
         <div className="mb-4">
           <img aria-hidden="true" alt="logo" src={logoImage} />
         </div>
-        <h2 className="text-lg font-semibold text-foreground">Registrarse con correo electrónico</h2>
+        <h2 className="text-lg font-manrope font-light">Registrarse con correo electrónico</h2>
         <form className="w-full max-w-sm mt-4" onSubmit={handleSubmit(onSubmit)}>
           <label className="block mb-2 text-muted-foreground" htmlFor="name"></label>
           <input
@@ -61,16 +62,17 @@ const Register = () => {
           {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
 
           <div className="flex justify-center">
+            <Link to="/questions">
             <button 
-              className="text-white px-4 py-2 rounded-[50px] hover:bg-opacity-80 w-full mx-3" 
-              style={{ backgroundColor: '#48B390', margin: '15px' }} 
-            >
+              className="bg-[#48B390] text-white w-[350px] px-4 py-3 mb-4 rounded-full hover:bg-opacity-80" 
+              >
               Registrarse
             </button>
+              </Link>
           </div>
         </form>
-        <p className="text-muted-foreground">¿Ya tienes una cuenta? <a href="#" className="text-[#3A8F73] hover:underline">Iniciar sesión</a></p>
-        <p className="mt-4 text-muted-foreground">O regístrate con</p>
+        <p className="font-manrope">¿Ya tienes una cuenta? <Link to="/login" className="text-[#3A8F73] hover:underline font-manrope">Iniciar sesión</Link></p>
+        <p className="mt-4 text-muted-foreground font-manrope">O regístrate con</p>
         <div className="flex space-x-4 mt-2">
           <button className="p-2 bg-zinc-200 rounded-full">
             <img aria-hidden="true" alt="Google" src={googleImage} />

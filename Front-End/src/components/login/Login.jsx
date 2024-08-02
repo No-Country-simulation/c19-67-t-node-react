@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import googleImage from '../../assets/img/login/icongoogle.png';
 import facebookImage from '../../assets/img/login/iconfacebook.png';
@@ -24,7 +24,7 @@ const Login = ({ onLogin }) => {
     <div className="min-h-screen flex items-center justify-center bg-white"> 
       <div className="bg-card rounded-lg p-8 w-full max-w-md">
         <img src={logoImage} alt="Logo" className="mb-6 mx-auto" />
-        <h2 className="text-lg font-semibold text-foreground">Iniciar sesión con correo electrónico</h2>
+        <h2 className="text-lg text-manrope font-light mb-4">Iniciar sesión con correo electrónico</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-primary"></label>
@@ -57,24 +57,22 @@ const Login = ({ onLogin }) => {
             </div>
             {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
           </div>
-          <div className="flex items-center justify-between mb-4"> 
-            <p className="text-primary">¿Olvidaste tu contraseña?</p>
-          </div>
           <div className="flex justify-center"> 
+            <Link to="/questions">
             <button 
               type="submit" 
-              className="bg-[#48B390] text-white px-4 py-2 rounded-[50px] hover:bg-opacity-80 w-full mx-3" 
-              style={{ margin: '15px' }} 
-            >
+              className="bg-[#48B390] text-white w-[350px] px-4 py-3 rounded-full hover:bg-opacity-80"
+              >
               Ingresar
             </button>
+              </Link>
           </div>
         </form>
-        <div className="flex items-center justify-start mt-6">
-          <p className="text-primary mr-2">¿No estás registrado?</p>
-          <button onClick={handleRegisterRedirect} className="text-[#3A8F73] hover:underline">Crea una cuenta</button>
+        <div className="flex items-center justify-center mt-6">
+          <p className="font-manrope mr-2">¿No estás registrado?</p>
+          <button onClick={handleRegisterRedirect} className="text-[#3A8F73] hover:underline font-manrope">Crea una cuenta</button>
         </div>
-        <p className="text-primary text-center">O inicia sesión con</p>
+        <p className="text-primary text-center font-manrope">O inicia sesión con</p>
         <div className="flex justify-center mt-4 space-x-4"> 
           <img 
             src={googleImage} 
